@@ -1,5 +1,6 @@
 package com.zoro.codesmartmcq
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,11 @@ fun bind(model : QuizMode)
         titleQuiz.text = model.title
         subtitleQuiz.text =model.subtitle
         timeText.text = model.time + " min"
+        root.setOnClickListener{
+            val intent = Intent(root.context,MCQActivity::class.java)
+            MCQActivity.QuestionModel = model.questionList
+            root.context.startActivity(intent)
+        }
     }
 }
      }

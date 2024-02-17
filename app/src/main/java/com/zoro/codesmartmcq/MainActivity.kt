@@ -29,15 +29,18 @@ class MainActivity : AppCompatActivity() {
     private fun getDataFromFirebase()
     {
         // Dummy data store...
-        quizModeList.add(QuizMode("1","programming","All the programming","10"))
-        quizModeList.add(QuizMode("2","Computer","All the computer programming","20"))
-        quizModeList.add(QuizMode("3","Algo","All the algo learn","5"))
-        quizModeList.add(QuizMode("4","programming","All the programming","10"))
-        quizModeList.add(QuizMode("5","Computer","All the computer programming","20"))
-        quizModeList.add(QuizMode("6","Algo","All the algo learn","5"))
-        quizModeList.add(QuizMode("7","programming","All the programming","10"))
-        quizModeList.add(QuizMode("8","Computer","All the computer programming","20"))
-        quizModeList.add(QuizMode("9","Algo","All the algo learn","5"))
+
+
+        val listQuestionModel = mutableListOf<QuestionModel>()
+        listQuestionModel.add(QuestionModel("What is android os.?", mutableListOf("language","os","product","None"),"os"))
+        listQuestionModel.add(QuestionModel("What is kotlin?", mutableListOf("language","os","jet brain","None"),"jet brain"))
+        listQuestionModel.add(QuestionModel("What is game development?", mutableListOf("language","c#","product","None"),"c#"))
+
+
+
+        quizModeList.add(QuizMode("1","programming","All the programming","10",listQuestionModel))
+        // quizModeList.add(QuizMode("2","Computer","All the computer programming","20"))
+       // quizModeList.add(QuizMode("3","Algo","All the algo learn","5"))
         setupRecyclerView()
     }
 }
