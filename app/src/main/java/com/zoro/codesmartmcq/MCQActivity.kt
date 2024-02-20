@@ -64,6 +64,7 @@ class MCQActivity : AppCompatActivity(), View.OnClickListener{
             finishQuiz()
             return
         }
+
    binding.apply {
        questionTextview.text= "Question ${currentQuestionIndex+1} / ${QuestionModel.size}"
      quizProgressIndicator.progress =
@@ -87,13 +88,14 @@ class MCQActivity : AppCompatActivity(), View.OnClickListener{
         }
         //click a btn for next
         val clickedBtn = view as Button
-        if(selectedAnswer.isEmpty()){
-            Toast.makeText(applicationContext,"Please select answer to continue",Toast.LENGTH_SHORT).show()
-            return;
-        }
+
 
         if(clickedBtn.id==R.id.next_btn)
         {
+            if(selectedAnswer.isEmpty()){
+                Toast.makeText(applicationContext,"Please select answer to continue",Toast.LENGTH_SHORT).show()
+                return;
+            }
             // next button is clicked
             if(selectedAnswer== QuestionModel[currentQuestionIndex].correct)    {
                 score++
