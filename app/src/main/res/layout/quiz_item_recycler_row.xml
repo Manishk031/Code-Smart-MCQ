@@ -46,7 +46,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/icon_timer"
-                android:tint="@color/lightpurple"/>
+                android:tint="@color/orange"/>
 
             <TextView
                 android:id="@+id/time_text"

@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             app:indicatorSize="90dp"
-            app:trackColor="@color/purple"
+            app:trackColor="@color/grey"
             app:trackCornerRadius="20dp"
             app:trackThickness="5dp"
             tools:progress="75" />

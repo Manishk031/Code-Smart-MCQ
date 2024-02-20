@@ -4,9 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#800080</color>
     <color name="darkblue">#00008B</color>
-    <color name="lightpurple">#CBC3E3</color>
-    <color name="blue">#787895</color>
+    <color name="grey">#FAFAFA</color>
+    <color name="blue">#1F45FC</color>
     <color name="green">#6CD65B</color>
+    <color name="lightBlue">#5F79B6</color>
+    <color name="medipurple">#CF72F6</color>
+    <color name="orange">#FFA500</color>
 
 
 </resources>

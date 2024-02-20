@@ -81,10 +81,10 @@ class MCQActivity : AppCompatActivity(), View.OnClickListener{
     override fun onClick(view : View?) {
 
         binding.apply {
-            btn0.setBackgroundColor(getColor(R.color.lightpurple))
-            btn1.setBackgroundColor(getColor(R.color.lightpurple))
-            btn2.setBackgroundColor(getColor(R.color.lightpurple))
-            btn3.setBackgroundColor(getColor(R.color.lightpurple))
+            btn0.setBackgroundColor(getColor(R.color.grey))
+            btn1.setBackgroundColor(getColor(R.color.grey))
+            btn2.setBackgroundColor(getColor(R.color.grey))
+            btn3.setBackgroundColor(getColor(R.color.grey))
         }
         //click a btn for next
         val clickedBtn = view as Button

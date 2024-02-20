@@ -28,7 +28,7 @@
             android:layout_toStartOf="@+id/timer_indicator"
             android:layout_centerVertical="true"
             android:layout_marginEnd="4dp"
-            app:tint="@color/lightpurple" />
+            app:tint="@color/black" />
 
         <TextView
             android:id="@+id/timer_indicator"
@@ -79,44 +79,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:backgroundTint="@color/lightpurple"
+                android:backgroundTint="@color/grey"
                 tools:text="Ans A"
                 android:gravity="center_vertical"
                 android:paddingVertical="12dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:id="@+id/btn0"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:backgroundTint="@color/lightpurple"
+                android:backgroundTint="@color/grey"
                 tools:text="Ans B"
                 android:gravity="center_vertical"
                 android:paddingVertical="12dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:id="@+id/btn1"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:backgroundTint="@color/lightpurple"
+                android:backgroundTint="@color/grey"
                 tools:text="Ans C"
                 android:gravity="center_vertical"
                 android:paddingVertical="12dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:id="@+id/btn2"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:backgroundTint="@color/lightpurple"
+                android:backgroundTint="@color/grey"
                 tools:text="Ans D"
                 android:gravity="center_vertical"
                 android:paddingVertical="12dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:id="@+id/btn3"/>
 
@@ -131,13 +131,8 @@
                 android:layout_gravity="end"
                 android:id="@+id/next_btn"
                 android:paddingHorizontal="40dp"
-                />
+                android:textColor="@color/black"/>
             
-
-
-
-
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

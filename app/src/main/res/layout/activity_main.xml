@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/darkblue"
     tools:context=".MainActivity">
     <ImageView
         android:layout_width="match_parent"
@@ -18,11 +17,13 @@
         android:layout_height="wrap_content"
        android:layout_marginTop="16dp"
         android:padding="8dp"
+        android:backgroundTint="@color/blue"
+        android:background="@drawable/rounded_corner"
         android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CodeSMart MCQ"
+        android:text="CodeSmart MCQ"
         android:textColor="@color/white"
         android:gravity="center"
         android:textSize="34sp"
@@ -32,7 +33,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Let's play codesmart MCQ to enchance your knowledge"
+        android:text="Let's play CodeSmart MCQ to enhance your knowledge."
         android:textColor="@color/white"
         android:gravity="center"
         android:textSize="18sp"
