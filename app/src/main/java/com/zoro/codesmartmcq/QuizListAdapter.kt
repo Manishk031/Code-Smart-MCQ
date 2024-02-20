@@ -19,6 +19,7 @@ fun bind(model : QuizMode)
         root.setOnClickListener{
             val intent = Intent(root.context,MCQActivity::class.java)
             MCQActivity.QuestionModel = model.questionList
+            MCQActivity.time =  model.time
             root.context.startActivity(intent)
         }
     }
