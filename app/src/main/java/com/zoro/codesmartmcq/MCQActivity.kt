@@ -1,12 +1,16 @@
 package com.zoro.codesmartmcq
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.zoro.codesmartmcq.databinding.ActivityMcqactivityBinding
+import com.zoro.codesmartmcq.databinding.ScoreDialogBinding
 
 class MCQActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -81,7 +85,13 @@ class MCQActivity : AppCompatActivity(), View.OnClickListener{
             btn2.setBackgroundColor(getColor(R.color.lightpurple))
             btn3.setBackgroundColor(getColor(R.color.lightpurple))
         }
+        //click a btn for next
         val clickedBtn = view as Button
+        if(selectedAnswer.isEmpty()){
+            Toast.makeText(applicationContext,"Please select answer to continue",Toast.LENGTH_SHORT).show()
+            return;
+        }
+
         if(clickedBtn.id==R.id.next_btn)
         {
             // next button is clicked
@@ -100,6 +110,31 @@ class MCQActivity : AppCompatActivity(), View.OnClickListener{
     }
     private fun finishQuiz()
     {
+        val totalQuestions = QuestionModel.size
+        val percentage = ((score.toFloat() / totalQuestions.toFloat())*100).toInt()
+
+        val dialogBinding = ScoreDialogBinding.inflate(layoutInflater)
+        dialogBinding.apply {
+            scoreProgress.progress = percentage
+            scoreText.text = "$percentage%"
+            if(percentage>60) {
+                scoreTitle.text = "Congrats! You have passed"
+                scoreTitle.setTextColor(Color.BLUE)
+            }else{
+                scoreTitle.text = "Oops! You have failed"
+                scoreTitle.setTextColor(Color.RED)
+            }
+            scoreSubtitle.text = "$score out of $totalQuestions are correct"
+            finishBtn.setOnClickListener{
+                finish()
+            }
+
+        }
+
+        AlertDialog.Builder(this)
+            .setView(dialogBinding.root)
+            .setCancelable(false)
+            .show()
 
     }
 }

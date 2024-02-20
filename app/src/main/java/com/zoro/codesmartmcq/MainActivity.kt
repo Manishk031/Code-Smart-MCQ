@@ -2,8 +2,11 @@ package com.zoro.codesmartmcq
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.Firebase
+import com.google.firebase.database.FirebaseDatabase
 import com.zoro.codesmartmcq.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun setupRecyclerView()
     {
+        binding.progressBar.visibility = View.GONE
         adapter = QuizListAdapter(quizModeList)
         binding.recycleView.layoutManager = LinearLayoutManager(this)
         binding.recycleView.adapter = adapter
@@ -28,19 +32,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun getDataFromFirebase()
     {
-        // Dummy data store...
+        binding.progressBar.visibility = View.VISIBLE
+        FirebaseDatabase.getInstance().reference
+            .get()
+            .addOnSuccessListener {
+                dataSnapshot-> if(dataSnapshot.exists()){
+                    for(snapshot in dataSnapshot.children){
+                        val quizModel = snapshot.getValue(QuizMode::class.java)
 
+                        if(quizModel != null){
+                            quizModeList.add(quizModel)
+                        }
+                    }
+            }
+                setupRecyclerView()
+            }
 
-        val listQuestionModel = mutableListOf<QuestionModel>()
-        listQuestionModel.add(QuestionModel("What is android os.?", mutableListOf("language","os","product","None"),"os"))
-        listQuestionModel.add(QuestionModel("What is kotlin?", mutableListOf("language","os","jet brain","None"),"jet brain"))
-        listQuestionModel.add(QuestionModel("What is game development?", mutableListOf("language","c#","product","None"),"c#"))
-
-
-
-        quizModeList.add(QuizMode("1","programming","All the programming","10",listQuestionModel))
-        // quizModeList.add(QuizMode("2","Computer","All the computer programming","20"))
-       // quizModeList.add(QuizMode("3","Algo","All the algo learn","5"))
-        setupRecyclerView()
     }
 }
