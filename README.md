@@ -1,6 +1,5 @@
-CODESMART MCQ APP..
 
-This Application is Multiple choice quiz application and data store for raltime db firabase.
+#This Application is Multiple choice quiz application and data store for raltime db firabase.
 
 #HomeScreen
 
