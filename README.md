@@ -1,5 +1,5 @@
 
-#This Application is Multiple choice quiz application and data store for raltime db firabase.
+This Application is Multiple choice quiz application and data store for realtime db firabase.
 
 #HomeScreen
 
