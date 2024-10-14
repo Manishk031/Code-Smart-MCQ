@@ -21,7 +21,4 @@ The **MCQ Application** is an Android-based mobile app that allows users to answ
 ## Screenshots
 Below is a sample screenshot of the MCQ app in action:
 
-![MCQ App Screenshot](path-to-image.png)
-
-<!-- You can manage image size like this -->
-<img src="path-to-image.png" alt="MCQ App Screenshot" width="300">
+  
